@@ -2,6 +2,9 @@ const express = require("express");
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const cors = require("cors");
+const checkAuth = require("./middleware/auth");
+const UserRoute = require("./controllers/usercontroller");
+const LoginRoute = require("./controllers/logincontroller");
 
 dotenv.config();
 const app = express();
@@ -31,7 +34,9 @@ mongoose.connection.once("open", () => {
   console.log("Database Connected Successfully");
 });
 
-// app.use("/userLogin", userLoginRoute);
+app.use("/login", LoginRoute);
+app.use(checkAuth);
+app.use("/user", UserRoute);
 
 app.listen(PORT, () => {
     console.log(`Server is running on PORT ${PORT}`);
