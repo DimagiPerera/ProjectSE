@@ -21,7 +21,7 @@ module.exports = {
             secure: false, // true for 465 and false for other ports
             auth: {
                 user: 'surgeassignment@gmail.com', // generated ethereal user
-                pass: 'surge123'  // generated ethereal password
+                pass: 'fzpwycuuchxecudv'  // generated ethereal password
             },
             tls: {
                 rejectUnauthorized: false
