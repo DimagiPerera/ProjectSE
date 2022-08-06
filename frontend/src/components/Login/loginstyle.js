@@ -20,7 +20,7 @@ export default makeStyles((theme) => ({
     backgroundColor: "#3f51b5",
   },
   form: {
-    width: "100%", // Fix IE 11 issue.
+    width: "100%", 
     marginTop: theme.spacing(3),
     backgroundColor: "#ffffff",
     padding: "20px",

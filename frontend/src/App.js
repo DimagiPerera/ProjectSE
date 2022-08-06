@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import SignIn from './components/Login/Login';
 import Footer from './components/Footer/Footer';
 import Header from './components/Header/Header';
+import AddUser from './components/AddUser';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           {localStorage.getItem("token") ? (
             <Switch>
               <Route path="/" component={SignIn} />
+              <Route path="/add" component={AddUser} />
 
             </Switch>
           ) : (
