@@ -1,5 +1,5 @@
 import { useHistory } from "react-router-dom";
-import InputField from "./Password";
+import InputField from "../Password";
 import {
   Avatar,
   Button,
@@ -10,29 +10,20 @@ import {
 } from "@material-ui/core";
 import LocalLibraryIcon from "@material-ui/icons/LocalLibrary";
 import React, { useState } from "react";
+import loginStyle from './loginstyle';
 import axios from "axios";
 
-/**
- * inisial form input state
- * @type {{ email: string, password: string, login: string}}
- */
+
+//initializing form input states
+
 const initialState = { _id: "", email: "", password: "", login: '' };
 
-/**
- * sign in and sign up component
- * @returns {*}
- * @constructor
- */
 const SignIn = () => {
-  /**
-   * import variable
-   * @type {*}
-   */
+
+  const classes = loginStyle();
   let history = useHistory();
 
-  /**
-   * states
-   */
+ //states
   const [showPassword, setShowpassword] = useState(false);
   const [isSignUp, setSignUp] = useState(false);
   const [formData, setFormData] = useState(initialState);
@@ -40,20 +31,15 @@ const SignIn = () => {
   const [errors, setErrors] = useState(initialState);
   const [isfailedLogin, setfailedLogin] = useState(false);
 
-  /**
-   * password visibility togle
-   */
+//password visibility
   const handleShowPass = () => setShowpassword((prevShowPass) => !prevShowPass);
 
-  /**
-   * form submit
-   * @param e
-   */
+//submit form details
   const onSubmit = async (e) => {
     e.preventDefault();
     console.log(formData);
     try {
-      await axios.post(`localhost:8070/userLogin/signin`, formData).then((res) => {
+      await axios.post(`localhost:8070/login/signin`, formData).then((res) => {
         localStorage.setItem("token", res.data.token);
         localStorage.setItem("userData", JSON.stringify(res.data.user));
         console.log(res.data.user);
@@ -76,10 +62,6 @@ const SignIn = () => {
     }
   };
 
-  /**
-   * on text field value change
-   * @param e
-   */
   const onchange = (e) => {
     e.preventDefault();
     const { name, value } = e.target;
@@ -104,14 +86,14 @@ const SignIn = () => {
 
   return (
     <Container component="main" className="container" maxWidth="md">
-      <Paper maxWidth="mdx" elevation={3}>
+      <Paper className={classes.paper} maxWidth="mdx" elevation={3}>
         <div>
-          <Avatar>
+          <Avatar className={classes.avatar}>
             <LocalLibraryIcon />
           </Avatar>
           <Typography variant="h5">Sign In</Typography>
         </div>
-        <form onSubmit={onSubmit}>
+        <form className={classes.form} onSubmit={onSubmit}>
           <Grid container spacing={2}>
             <InputField
               name="email"
@@ -136,6 +118,7 @@ const SignIn = () => {
           </Grid>
 
           <Button
+            className={classes.submit}
             type="submit"
             fullWidth
             variant="contained"

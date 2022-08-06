@@ -1,0 +1,10 @@
+.headerdiv{
+    width: 100%;
+    background-color: rgb(42, 43, 43);
+    color: white;
+    height: 80px;
+}
+
+.topic{
+    margin-top: auto;
+}
