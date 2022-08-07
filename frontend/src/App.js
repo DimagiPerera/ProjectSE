@@ -15,6 +15,7 @@ function App() {
           {localStorage.getItem("token") ? (
             <Switch>
               <Route path="/" component={SignIn} />
+              <Route path="/home" component={SignUp} />
               <Route path="/add" component={AddUser} />
 
             </Switch>

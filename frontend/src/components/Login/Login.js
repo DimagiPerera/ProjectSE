@@ -39,7 +39,7 @@ const SignIn = () => {
     e.preventDefault();
     console.log(formData);
     try {
-      await axios.post(`localhost:8070/login/signin`, formData).then((res) => {
+      await axios.post(`http://localhost:8070/login/signin`, formData).then((res) => {
         localStorage.setItem("token", res.data.token);
         localStorage.setItem("userData", JSON.stringify(res.data.user));
         console.log(res.data.user);
