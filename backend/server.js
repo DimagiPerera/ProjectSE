@@ -27,5 +27,5 @@ app.use(cookieParser());
 import userRoutes from "./routes/userroutes.js";
 app.use("/user", userRoutes);
 
-// import notesRoutes from "./routes/noteRoutes.js";
-// app.use("/notes", notesRoutes);
+import notesRoutes from "./routes/noteRoutes.js";
+app.use("/note", notesRoutes);
