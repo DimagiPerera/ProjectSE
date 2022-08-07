@@ -1,0 +1,93 @@
+body {
+    margin: 0;
+    padding: 0;
+    /* background: url("https://res.cloudinary.com/waste123/image/upload/v1656825835/RMTS/SE/akoj1pd2hkpzpkbclfyk.jpg");
+    background-color: #ffc500; */
+    background-size: cover;
+    background-position: center;
+    font-family: sans-serif;
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+      url(https://res.cloudinary.com/waste123/image/upload/v1656825835/RMTS/SE/akoj1pd2hkpzpkbclfyk.jpg);
+    height: 100vh;
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+  }
+  .login-box {
+    width: responsive;
+    height: responsive;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    padding: 70px 30px;
+    margin-top: 10%;
+  }
+  
+  .avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: absolute;
+    top: -50px;
+    left: calc(50% - 50px);
+  }
+  h1 {
+    margin: 0;
+    padding: 0 0 20px;
+    text-align: center;
+    font-size: 22px;
+  }
+  .login-box p {
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+  }
+  .login-box input {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .login-box input {
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: white;
+    outline: none;
+    height: 40px;
+    color: #000;
+    font-size: 16px;
+  }
+  
+  .btnSubmit {
+    border: none;
+    outline: none;
+    height: 40px;
+    width: 50%;
+    background: #ffc500;
+    color: rgb(0, 0, 0);
+    font-size: 16px;
+    border-radius: 20px;
+    font-weight: bold;
+    margin-left: 25%;
+  }
+  .btnSubmit :hover {
+    cursor: pointer;
+    background: #f9fffb;
+    color: #000;
+  }
+  .dropdown {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .login-box a {
+    text-decoration: none;
+    font-size: 14px;
+    color: #fff;
+  }
+  .login-box a:hover {
+    color: #39dc79;
+  }
+  
