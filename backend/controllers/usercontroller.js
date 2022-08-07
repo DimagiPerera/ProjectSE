@@ -1,6 +1,6 @@
 import User from "../models/User.js";
 import { nanoid } from "nanoid";
-import sendMail from "./mailcontroller";
+import sendMail from "./mailcontroller.js";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 

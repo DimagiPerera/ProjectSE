@@ -23,9 +23,9 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(cookieParser());
 
-// //Import routes
-// import userRoutes from "./routes/userRoutes.js";
-// app.use("/user", userRoutes);
+//Import routes
+import userRoutes from "./routes/userroutes.js";
+app.use("/user", userRoutes);
 
 // import notesRoutes from "./routes/noteRoutes.js";
 // app.use("/notes", notesRoutes);

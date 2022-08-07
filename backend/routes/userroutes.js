@@ -9,9 +9,9 @@ import {
   getAllUsers,
   getUser,
   logout,
-} from "../controllers/usercontroller";
+} from "../controllers/usercontroller.js";
 import auth from "../middleware/auth.js";
-import adminAuth from "../middleware/adminAuth";
+import adminAuth from "../middleware/adminAuth.js";
 
 router.post("/createUser", createUser);
 router.post("/login", login);

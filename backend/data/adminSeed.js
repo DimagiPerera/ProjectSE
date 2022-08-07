@@ -1,4 +1,4 @@
-import Admin from "../models/user.js";
+import Admin from "../models/User.js";
 import bcrypt from "bcrypt";
 
 const temPasswordHash = await bcrypt.hash("saranga@123", 12);
