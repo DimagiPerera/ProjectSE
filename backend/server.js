@@ -8,14 +8,14 @@ import connectDB from "./connectDB.js";
 dotenv.config();
 const app = express();
 
-//server run in this port 8070
+//Server run in this port 8070
 const PORT = 8070;
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
 
-//Connect data base
+//Connecting to MongoDB
 connectDB();
 
 app.use(express.json());
@@ -23,9 +23,9 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(cookieParser());
 
-//Import routes
-import userRoutes from "./routes/userRoutes.js";
-app.use("/user", userRoutes);
+// //Import routes
+// import userRoutes from "./routes/userRoutes.js";
+// app.use("/user", userRoutes);
 
-import notesRoutes from "./routes/noteRoutes.js";
-app.use("/notes", notesRoutes);
+// import notesRoutes from "./routes/noteRoutes.js";
+// app.use("/notes", notesRoutes);
