@@ -122,7 +122,7 @@ const AddUser = (props) => {
       if (email.trim() !== "" && password.trim() !== "" && validEmail && validPassword) {
         console.log(state);
 
-        await axios.post(`localhost:3000/user/insert`, state, {
+        await axios.post(`http://localhost:8070/user/insert`, state, {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,
           },

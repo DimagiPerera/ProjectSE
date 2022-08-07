@@ -20,8 +20,8 @@ module.exports = {
             port: 587,
             secure: false, // true for 465 and false for other ports
             auth: {
-                user: 'surgeassignment@gmail.com', // generated ethereal user
-                pass: 'fzpwycuuchxecudv'  // generated ethereal password
+                user: 'blueberryse3040@gmail.com', // generated ethereal user
+                pass: 'vwhojlyqsirczsqa'  // generated ethereal password
             },
             tls: {
                 rejectUnauthorized: false
@@ -30,7 +30,7 @@ module.exports = {
 
         // setup email data with unicode symbols
         let mailOptions = {
-            from: '"Notes" <surgeassignment@gmail.com>', // sender address
+            from: '"Notes" <blueberryse3040@gmail.com>', // sender address
             to: email, // list of receivers
             subject: `New User Account Created`, // Subject line
             text: 'Notes', // plain text body

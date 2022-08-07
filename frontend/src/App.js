@@ -5,6 +5,7 @@ import SignIn from './components/Login/Login';
 import Footer from './components/Footer/Footer';
 import Header from './components/Header/Header';
 import AddUser from './components/AddUser';
+import Details from './components/DisplayUsers/UsersList';
 
 function App() {
   return (
@@ -14,9 +15,11 @@ function App() {
         <section>
           {localStorage.getItem("token") ? (
             <Switch>
-              <Route path="/" component={SignIn} />
-              <Route path="/home" component={SignUp} />
+              
+              <Route path="/home" component={Details} exact/>
               <Route path="/add" component={AddUser} />
+
+              <Route path="/" component={SignIn} />
 
             </Switch>
           ) : (
