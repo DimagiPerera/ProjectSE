@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import "../components/css/Note.css";
+import "../components/CSS/note.css";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
-export default function AddNote() {
+export default function CreateNote() {
   const [note, setNote] = useState([]);
   const [localUser, setLocalUser] = useState(
     JSON.parse(localStorage.getItem("LocalUser"))

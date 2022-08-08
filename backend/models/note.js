@@ -1,10 +1,11 @@
 import mongoose from "mongoose";
 const Schema = mongoose.Schema;
 
-const NoteSchema = new Schema(
+const noteSchema = new Schema(
   {
     email: {
       type: String,
+
       trim: true,
     },
 
@@ -23,5 +24,5 @@ const NoteSchema = new Schema(
   }
 );
 
-const Note = mongoose.model("note", NoteSchema);
+const Note = mongoose.model("note", noteSchema);
 export default Note;

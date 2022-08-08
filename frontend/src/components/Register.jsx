@@ -1,10 +1,10 @@
 import { useSelector } from "react-redux";
 import React, { useState, useEffect } from "react";
-import "../components/css/Login.css";
+import "../components/CSS/login.css";
 import { customAlphabet } from "nanoid";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import { isLength, isMatch } from "./Validation";
+import { isLength, isMatch } from "./validation/Validation";
 const nanoid = customAlphabet("1234567890", 3);
 
 export default function Register() {
@@ -61,7 +61,7 @@ export default function Register() {
     }
 
     if (!isMatch(user.password, user.cPassword)) {
-      alert("Password and Confirm Password Not Matched");
+      alert("Password and Confirm Password must match");
       return;
     }
 
@@ -82,6 +82,9 @@ export default function Register() {
   };
   useEffect(() => {
     setToken(localStorage.getItem("TOKEN"));
+
+    //console.log("82", JSON.parse(localStorage.getItem("LocalUser")));
+
     redirect();
   }, []);
   return (
@@ -144,11 +147,10 @@ export default function Register() {
             required
           />
 
-          <p>Mobile Number</p>
+          <p>Phone No</p>
           <input
             type="tel"
             name="telephone"
-            pattern="[7-9]{2}-[0-9]{3}-[0-9]{4}"
             onChange={handleChange}
           />
 

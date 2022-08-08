@@ -1,6 +1,6 @@
-import Note from "../models/Notes.js";
+import Note from "../models/note.js";
 
-//Insert notes 
+//insert note to the system
 export const createNote = async (req, res) => {
   const { email, title, note } = req.body;
   console.log(req.body);
@@ -14,7 +14,7 @@ export const createNote = async (req, res) => {
     });
 };
 
-//Get one note
+//get a note
 export const getNoteByID = async (req, res) => {
   let noteId = req.params.id;
 
@@ -28,7 +28,7 @@ export const getNoteByID = async (req, res) => {
   });
 };
 
-//Delete a note
+//delete a note
 export const deleteNotes = async (req, res) => {
   let noteId = req.params.id;
   console.log("noteID", noteId);
@@ -44,7 +44,7 @@ export const deleteNotes = async (req, res) => {
   });
 };
 
-//Update a note
+//update a note
 export const updateNotes = async (req, res) => {
   let noteId = req.params.id;
   const { email, title, note } = req.body;

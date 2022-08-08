@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import adminSeed from "./data/adminSeed.js";
+import seedAdmin from "./Data/seedAdmin.js";
 
 //Database connection
 const connectDB = async () => {
@@ -9,11 +9,11 @@ const connectDB = async () => {
       useNewUrlParser: true,
     })
     .then(() => {
-      console.log("Connected to the Database");
-      adminSeed();
+      console.log("MongoDB Connected...");
+      seedAdmin();
     })
     .catch((err) => {
-      console.log("Failed to connect to the Database", err.message);
+      console.log("MongoDB connection Failed...", err.message);
       process.exit();
     });
 };

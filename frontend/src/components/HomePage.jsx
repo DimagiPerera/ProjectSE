@@ -1,10 +1,10 @@
 import React from "react";
-import "../components/css/Home.css";
+import "../components/CSS/home.css";
 import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import ClipLoader from "react-spinners/ClipLoader";
 
-export default function Home() {
+export default function HomePage() {
   const auth = useSelector((state) => state.auth);
   const { isLogged, isAdmin } = auth;
   const [loading, setLoading] = useState(false);

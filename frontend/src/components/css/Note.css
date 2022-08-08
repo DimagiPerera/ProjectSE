@@ -1,125 +1,124 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  .inner {
-    height: 75%;
-    width: 70%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border-radius: 10px;
-    box-shadow: 10px 10px 68px -6px rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: space-between;
-  }
-  
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.inner {
+  height: 75%;
+  width: 70%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+  box-shadow: 10px 10px 68px -6px rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: space-between;
+}
+
+.photo {
+  width: 50%;
+  height: 100%;
+  padding: 0 10px;
+}
+.photo img {
+  width: 100%;
+  height: 100%;
+}
+.user-form {
+  background: #ffc500;
+  padding: 50px;
+  width: 50%;
+  height: 100%;
+  border-radius: 0px 10px 10px 0px;
+}
+.user-form h2 {
+  color: rgb(0, 0, 0);
+  padding: 30px 0;
+  font-weight: 700;
+  text-align: center;
+}
+.user-form i {
+  position: absolute;
+  color: #6c63ff;
+  margin: 25px 10px;
+}
+input {
+  width: 100%;
+  border-radius: 30px;
+  border: none;
+  height: 3em;
+  font-size: 15px;
+  margin: 10px 0;
+  padding: 0 30px;
+}
+.safety {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  color: #fff;
+  font-size: 12px;
+  margin-top: 10px;
+  padding: 0 5px;
+}
+.line {
+  height: 6px;
+  border-radius: 20px;
+  width: 20%;
+  background: #fff;
+  margin: 5px;
+}
+span:nth-child(2) {
+  background-color: #fffc00;
+}
+span:nth-child(3) {
+  background-color: #fffc00;
+}
+.action-btn {
+  width: 100%;
+  display: flex;
+  margin: 30px 0;
+}
+.btnCreate {
+  border: 1px solid #fff;
+  color: #fff;
+  padding: 10px;
+  background: transparent;
+  border-radius: 20px;
+  width: 50%;
+  margin: 0 10px;
+  cursor: pointer;
+  font-size: 16px;
+}
+.primary {
+  border: none;
+  text-align: center;
+
+  background: linear-gradient(
+    45deg,
+    rgb(82, 73, 9) 24%,
+    rgba(255, 107, 0, 1) 100%
+  );
+}
+
+@media (max-width: 665px) {
   .photo {
-    width: 50%;
-    height: 100%;
-    padding: 0 10px;
-  }
-  .photo img {
-    width: 100%;
-    height: 100%;
+    display: none;
   }
   .user-form {
-    background: #ffc500;
-    padding: 50px;
-    width: 50%;
-    height: 100%;
-    border-radius: 0px 10px 10px 0px;
-  }
-  .user-form h2 {
-    color: rgb(0, 0, 0);
-    padding: 30px 0;
-    font-weight: 700;
-    text-align: center;
-  }
-  .user-form i {
-    position: absolute;
-    color: #6c63ff;
-    margin: 25px 10px;
-  }
-  input {
     width: 100%;
-    border-radius: 30px;
-    border: none;
-    height: 3em;
-    font-size: 15px;
-    margin: 10px 0;
-    padding: 0 30px;
+    border-radius: 10px;
   }
-  .safety {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    color: #fff;
-    font-size: 12px;
-    margin-top: 10px;
-    padding: 0 5px;
-  }
-  .line {
-    height: 6px;
-    border-radius: 20px;
-    width: 20%;
-    background: #fff;
-    margin: 5px;
-  }
-  span:nth-child(2) {
-    background-color: #fffc00;
-  }
-  span:nth-child(3) {
-    background-color: #fffc00;
-  }
+}
+@media screen and (max-width: 990px) and (min-width: 665px) {
   .action-btn {
+    margin: 5px;
+    display: block;
     width: 100%;
-    display: flex;
-    margin: 30px 0;
   }
   .btnCreate {
-    border: 1px solid #fff;
-    color: #fff;
-    padding: 10px;
-    background: transparent;
-    border-radius: 20px;
-    width: 50%;
-    margin: 0 10px;
-    cursor: pointer;
-    font-size: 16px;
+    width: 100%;
+    margin: 5px;
+    padding: 5px;
   }
-  .primary {
-    border: none;
-    text-align: center;
-  
-    background: linear-gradient(
-      45deg,
-      rgb(82, 73, 9) 24%,
-      rgba(255, 107, 0, 1) 100%
-    );
-  }
-  
-  @media (max-width: 665px) {
-    .photo {
-      display: none;
-    }
-    .user-form {
-      width: 100%;
-      border-radius: 10px;
-    }
-  }
-  @media screen and (max-width: 990px) and (min-width: 665px) {
-    .action-btn {
-      margin: 5px;
-      display: block;
-      width: 100%;
-    }
-    .btnCreate {
-      width: 100%;
-      margin: 5px;
-      padding: 5px;
-    }
-  }
-  
+}

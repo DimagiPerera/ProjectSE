@@ -6,7 +6,7 @@ import {
   deleteNotes,
   updateNotes,
   getAllNotes,
-} from "../controllers/notecontroller.js";
+} from "../controllers/noteCtrl.js";
 
 router.post("/createNote", createNote);
 router.get("/getNote/:id", getNoteByID);

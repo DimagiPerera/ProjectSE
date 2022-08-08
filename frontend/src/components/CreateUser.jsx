@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import "../components/css/Login.css";
+import "../components/CSS/login.css";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-export default function AddUser() {
+export default function CreateUser() {
   const [user, setUser] = useState();
   const navigate = useNavigate();
   const handleChange = (event) => {

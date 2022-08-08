@@ -3,7 +3,7 @@ import axios from "axios";
 import { Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
 import { useSelector } from "react-redux";
 
-export default function DisplayNotes() {
+export default function NoteList() {
   const [email, setEmail] = useState("");
   const [title, setTitle] = useState("");
   const [note, setNote] = useState("");

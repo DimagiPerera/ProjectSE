@@ -7,8 +7,8 @@ const sendMail = (name, temPassword, email, url) => {
   var transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
-      user: "blueberryse3040@gmail.com",
-      pass: "vwhojlyqsirczsqa",
+      user: "sliit.rmt@gmail.com",
+      pass: "mvvarvjzcwfxwuft",
     },
   });
 
@@ -23,9 +23,9 @@ const sendMail = (name, temPassword, email, url) => {
   transporter.use("compile", hbs(handleBar));
 
   var mailOptions = {
-    from: "My Notes",
+    from: "My Notes List",
     to: email,
-    subject: "My Notes",
+    subject: "My Notes List",
     text: "hi",
     template: "email",
     context: {
@@ -50,4 +50,3 @@ const sendMail = (name, temPassword, email, url) => {
 };
 
 export default sendMail;
-

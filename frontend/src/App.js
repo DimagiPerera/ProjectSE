@@ -7,13 +7,13 @@ import {
   fetchUser,
   dispatchGetUser,
 } from "./redux/actions/authAction";
-import AddNote from "./components/AddNote";
-import AddUser from "./components/AddUser";
+import CreateNote from "./components/CreateNote";
+import CreateUser from "./components/CreateUser";
 import Header from "./components/Header";
-import Home from "./components/Home";
+import HomePage from "./components/HomePage";
 import Login from "./components/Login";
 import Register from "./components/Register";
-import DisplayNotes from "./components/DisplayNotes";
+import NoteList from "./components/NoteList";
 
 function App() {
   const dispatch = useDispatch();
@@ -50,22 +50,22 @@ function App() {
       <Router>
         <Header />
         <Routes>
-          <Route exact path="/" element={<Home />} />
+          <Route exact path="/" element={<HomePage />} />
           <Route exact path="/login" element={<Login />} />
           <Route path="/reg" element={<Register />} exact />
           <Route
             path="/create"
-            element={auth.isLogged && auth.isAdmin ? <AddUser /> : <Login />}
+            element={auth.isLogged && auth.isAdmin ? <CreateUser /> : <Login />}
             exact
           />
           <Route
             path="/notes"
-            element={auth.isLogged ? <AddNote /> : <Login />}
+            element={auth.isLogged ? <CreateNote /> : <Login />}
             exact
           />
           <Route
             path="/list"
-            element={auth.isLogged ? <DisplayNotes /> : <Login />}
+            element={auth.isLogged ? <NoteList /> : <Login />}
             exact
           />
         </Routes>

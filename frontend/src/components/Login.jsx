@@ -4,7 +4,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { dispatchLogin } from "../redux/actions/authAction";
 import { useDispatch } from "react-redux";
-import "../components/css/Login.css";
+import "../components/CSS/login.css";
 
 export default function Login() {
   let navigate = useNavigate();
