@@ -3,6 +3,7 @@ import axios from "axios";
 import './CSS/note.css'
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import { useSelector } from "react-redux";
+import swal from 'sweetalert';
 
 export default function NoteList() {
   const [email, setEmail] = useState("");
@@ -126,7 +127,9 @@ export default function NoteList() {
           setLoading(false);
           setModal(false);
 
-          alert("Note Deleted Successfully");
+          swal("Your note file has been deleted!", {
+            icon: "success",
+          });
           console.log(res);
           window.location.reload(false);
         })

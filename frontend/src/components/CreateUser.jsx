@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "../components/CSS/login.css";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import swal from 'sweetalert';
 
 export default function CreateUser() {
   const [user, setUser] = useState();
@@ -22,7 +23,10 @@ export default function CreateUser() {
 
     try {
       const response = await axios.post("user/createUser", user).then(() => {
-        alert("User Created Successfully");
+        swal({
+          text: "User Created Successfully",
+          icon: "success",
+        });
         navigate("/");
       });
 

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "../components/CSS/note.css";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import swal from 'sweetalert';
 
 export default function CreateNote() {
   const [note, setNote] = useState([]);
@@ -22,7 +23,10 @@ export default function CreateNote() {
 
     try {
       const response = await axios.post("notes/createNote", note).then(() => {
-        alert("Note Created Successfully");
+        swal({
+          text: "Note Created Successfully",
+          icon: "success",
+        });
         navigate("/");
       });
 

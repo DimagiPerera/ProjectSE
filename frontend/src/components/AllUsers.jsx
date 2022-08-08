@@ -164,7 +164,7 @@ export default function UserList() {
     return (
         <div>
             <div className="notediv">
-                <table class="table table-striped table-light">
+            <table class="table table-striped table-light" style={{width:880,marginLeft:"25%"}}>
                     <thead class="thread-light">
                         <tr style={{ textAlign: "center", backgroundColor: "#524949", color: "white" }}>
                             <th scope="col" className="col-2">
@@ -174,18 +174,22 @@ export default function UserList() {
                                 E-mail
                             </th>
                             <th scope="col" className="col-2">
-                                Action
+                                User Type
+                            </th>
+                            <th scope="col" className="col-2">
+                               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Action
                             </th>
                         </tr>
                     </thead>
                     <tbody style={{ textAlign: "center" }}>
                         {users?.map((user) => (
-                            <tr style={{ padding: "2px" }}>
-                                <td className="py-3 ">{user.firstName} &nbsp;{user.lastName}</td>
-                                <td className="py-3 ">{user.email}</td>
-                                <td className="py-3 ">
+                            <tr >
+                                <td className="py-3 " style={{ padding:"7px 25px"}}>{user.firstName} &nbsp;{user.lastName}</td>
+                                <td className="py-3 " style={{ padding:"7px 20px"}}>{user.email}</td>
+                                <td className="py-3 " style={{ padding:"7px 25px"}}>{user.accountType}</td>
+                                <td className="py-3 " style={{ padding:"7px 10px"}}>
                                     <button
-                                        className="viewbutton  "
+                                        className="viewbutton1  "
                                         data-bs-toggle="modal"
                                         onClick={() => handleSetData(user)}
                                     >

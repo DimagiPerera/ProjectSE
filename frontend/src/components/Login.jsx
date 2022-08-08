@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { dispatchLogin } from "../redux/actions/authAction";
 import { useDispatch } from "react-redux";
 import "../components/CSS/login.css";
+import swal from 'sweetalert';
 
 export default function Login() {
   let navigate = useNavigate();
@@ -23,7 +24,11 @@ export default function Login() {
 
     try {
       const response = await axios.post("user/login", user);
-      alert(response.data.msg);
+      swal({
+        text: "You have successfully Logged In",
+        icon: "success",
+      });
+      // alert(response.data.msg);
       localStorage.setItem("Login", true);
       console.log("response", response.data.data);
       localStorage.setItem("LocalUser", JSON.stringify(response.data.data));
