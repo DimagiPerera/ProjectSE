@@ -220,6 +220,7 @@ export default function NoteList() {
             </div>
           </div>
         </div>
+        <button className="addbtn"><a href="/notes">Add New + </a> </button>
         </div>
 
         <div
@@ -238,13 +239,12 @@ export default function NoteList() {
             toggle={() => setModal(!modal)}
           >
             <ModalHeader toggle={() => setModal(!modal)}>
-              <h5>View Note</h5>
             </ModalHeader>
             <ModalBody>
-              <form>
+              <form><br/>
                 <div className="form-group">
                   <label>Title: </label>
-                  <input
+                  <input style={{width:500}}
                     disabled={enable}
                     className="form-control"
                     type="text"
@@ -252,10 +252,10 @@ export default function NoteList() {
                     value={title}
                     onChange={(e) => setTitle(e.target.value)}
                   />
-                </div>
+                </div><br/><br/>
+                <label>Description: </label><br/><br/>
                 <div className="form-group">
-                  <label>Title: </label>
-                  <textarea
+                  <textarea style={{width:500,height:150,borderRadius:20,fontSize:16}}
                     disabled={enable}
                     className="form-control"
                     rows="3"
@@ -264,25 +264,24 @@ export default function NoteList() {
                   />
                 </div>
               </form>
-            </ModalBody>
+            </ModalBody><br/><br/>
             <ModalFooter>
               <button
-                className="btn1"
-                data-bs-dismiss="modal"
+             type="btn"
+             class="btn btn-info"
                 onClick={() => handleDelete(noteid)}
-              >
-                <i className="fas fa-trash-alt"></i>&nbsp;Delete
+              >Delete
               </button>
 
               <button
-                type="btn1"
+                type="btn"
                 class="btn btn-info"
                 onClick={() => setEnable(false)}
               >
                 Edit
               </button>
               <button
-                type="btn1"
+                type="btn"
                 class="btn btn-success"
                 data-bs-dismiss="modal"
                 disabled={enable}
@@ -290,14 +289,12 @@ export default function NoteList() {
               >
                 Save
               </button>
-              <button
-                type="btn1"
-                class="btn btn-success"
+              <button style={{borderRadius:"50%",font:20,width:30,height:30,fontWeight:550,position:"absolute",top:10,right:15}}
                 onClick={toggle}
               >
-                Close
+                X
               </button>
-
+<br/><br/>
             </ModalFooter>
           </Modal>
           </div>
