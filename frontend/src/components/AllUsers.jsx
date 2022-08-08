@@ -89,65 +89,23 @@ export default function UserList() {
             }
         }
     }
-    //   async function handleUpdate(id) {
-    //     setLoading(true);
-    //     setEnable(true);
-    //     await axios
-    //       .put("notes/updateNote/" + id, {
-    //         email,
-    //         title,
-    //         note,
-    //       })
-    //       .then((res) => {
-    //         setLoading(false);
-
-    //         axios
-    //           .get("notes/getAllNotes?page=" + currentPage + "&limit=5")
-    //           .then((res) => {
-    //             setNotes(res.data.existingNotes);
-    //             setPageCount(res.data.pages);
-    //             setLoading(false);
-    //           })
-    //           .catch((err) => {
-    //             alert(err.message);
-    //           });
-    //       })
-    //       .catch((err) => {
-    //         alert(err.message);
-    //       });
-    //   }
-
-    //   async function handleDelete(id) {
-    //     let ans = window.confirm("Do you want to delete this note ?");
-
-    //     if (ans) {
-    //       setLoading(true);
-    //       setEnable(true);
-    //       axios
-    //         .delete("notes/deleteNote/" + id)
-    //         .then((res) => {
-    //           setLoading(false);
-    //           setModal(false);
-
-    //           alert("Note Deleted Successfully");
-    //           console.log(res);
-    //           window.location.reload(false);
-    //         })
-    //         .catch((err) => {
-    //           alert(err.message);
-    //         });
-    //       axios
-    //         .get("notes/getAllNotes?page=" + currentPage + "&limit=5")
-    //         .then((res) => {
-    //           setNotes(res.data.existingNotes);
-    //           setPageCount(res.data.pages);
-    //           setLoading(false);
-    //         })
-    //         .catch((err) => {
-    //           alert(err.message);
-    //         });
-    //     }
-    //   }
+   
+    function filterContent(data, searchTerm){
+        const result = data.filter((user) => 
+            user.firstName.toLowerCase().includes(searchTerm) ||
+            user.email.toLowerCase().includes(searchTerm)
+        )
+        setUsers(result)
+      }
+    
+      function handleSearchAll(event){
+        const searchTerm = event.currentTarget.value
+        axios.get(`user/allUsers/?page=1&limit=5`).then((res) => {
+          filterContent(res.data, searchTerm.toLowerCase())
+        }).catch((error) => {
+          alert("Failed to Fetch Details")
+        })
+      }
 
     updatePagination();
 
@@ -163,6 +121,16 @@ export default function UserList() {
     }
     return (
         <div>
+              <div className="px-3 search search1" align="right" style={{ marginTop:55,marginLeft:1000,width: 300}}>
+                  <input style={{ color:'black' }} className="search1"
+                    type="text" 
+                    name="search" 
+                    id="search"
+                    placeholder="Search" 
+                    onChange={handleSearchAll} 
+                    required 
+                  />
+                </div>
             <div className="notediv">
             <table class="table table-striped table-light" style={{width:880,marginLeft:"25%"}}>
                     <thead class="thread-light">
