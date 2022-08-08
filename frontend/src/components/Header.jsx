@@ -61,7 +61,7 @@ function Header() {
           <Link to="/create">Create User</Link>
         </li>
         <li>
-          <Link to="#">All Users</Link>
+          <Link to="/">All Users</Link>
         </li>
 
         <li>

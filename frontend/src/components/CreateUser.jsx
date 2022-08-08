@@ -65,8 +65,8 @@ export default function CreateUser() {
             required
           />
           <p>User Type</p>
-          <div className="dropdown">
-            <select
+          <div className="dropdown" >
+            <select  style={{padding:'12px 80px',marginTop:"10PX",borderRadius:20,fontSize:16,color:"rgb(117, 117, 117)"}}
               class="form-control"
               id="exampleFormControlSelect1"
               name="accountType"
