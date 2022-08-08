@@ -213,11 +213,45 @@ border: none;
     justify-content: center;
     align-items: center;
     width: 50%;
-    position: absolute;
+   position: absolute; 
     top: 0;
     margin-left: 25%;
 
   }
+
+  
+  /* model2 container - can be anything you want */
+.model2 {
+  position: relative;
+  display: flex;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: #fff;
+  width:700;
+  right: 28%;
+}
+
+
+/* Toggle this class - hide and show the model2 */
+.model2 .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+}
+
+/* Add animation (fade in the model2) */
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;} 
+  to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
+}
 
 
 

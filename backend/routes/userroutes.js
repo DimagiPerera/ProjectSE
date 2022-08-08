@@ -18,7 +18,7 @@ router.post("/login", login);
 router.post("/refresh_token", getAccessToken);
 router.post("/reset", auth, resetPassword);
 router.post("/register", registerUser);
-router.get("/allUsers", auth, authAdmin, getAllUsersInfo);
+router.get("/allUsers", getAllUsersInfo);
 router.get("/userInfo", auth, getUserInfo);
 router.get("/logout", auth, logout);
 

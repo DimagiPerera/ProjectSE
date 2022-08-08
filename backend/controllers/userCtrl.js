@@ -132,19 +132,6 @@ export const registerUser = async (req, res) => {
       req.body;
     console.log(req.body);
 
-    // await User.create({
-    //   id,
-    //   firstName,
-    //   lastName,
-    //   email,
-    //   dateOfBirth,
-    //   mobile,
-    //   status,
-    // }).then(() => {
-    //   return res.status(200).json({
-    //     msg: "register Success",
-    //   });
-    // });
     await User.findOneAndUpdate(
       { email: email },
       {

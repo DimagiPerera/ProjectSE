@@ -14,6 +14,7 @@ import HomePage from "./components/HomePage";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import NoteList from "./components/NoteList";
+import UserList from "./components/AllUsers";
 
 function App() {
   const dispatch = useDispatch();
@@ -58,6 +59,12 @@ function App() {
             element={auth.isLogged && auth.isAdmin ? <CreateUser /> : <Login />}
             exact
           />
+          <Route
+            path="/getall"
+            element={auth.isLogged && auth.isAdmin ? <UserList /> : <Login />}
+            exact
+          />
+
           <Route
             path="/notes"
             element={auth.isLogged ? <CreateNote /> : <Login />}
