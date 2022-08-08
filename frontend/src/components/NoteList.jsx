@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
+import './CSS/note.css'
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import { useSelector } from "react-redux";
 
 export default function NoteList() {
@@ -14,6 +15,12 @@ export default function NoteList() {
   const [loading, setLoading] = useState(true);
   const [enable, setEnable] = useState(true);
   const [modal, setModal] = useState(false);
+  const toggle = () => setModal(!modal);
+  const closeBtn = (
+    <button className="close" onClick={toggle} type="button">
+      &times;
+    </button>
+  );
 
   const auth = useSelector((state) => state.auth);
   const { LoggedUser } = auth;
@@ -150,10 +157,10 @@ export default function NoteList() {
   }
   return (
     <div>
-      <div className="py-4 container mt-5">
+      <div className="notediv">
         <table class="table table-striped table-light">
           <thead class="thread-light">
-            <tr style={{ textAlign: "center" }}>
+            <tr style={{ textAlign: "center",backgroundColor:"#524949" ,color:"white"}}>
               <th scope="col" className="col-2">
                 Title
               </th>
@@ -172,7 +179,7 @@ export default function NoteList() {
                 <td className="py-3 ">{note.note}</td>
                 <td className="py-3 ">
                   <button
-                    className="btn btn-warning  "
+                    className="viewbutton  "
                     data-bs-toggle="modal"
                     onClick={() => handleSetData(note)}
                   >
@@ -191,31 +198,29 @@ export default function NoteList() {
             ))}
           </tbody>
         </table>
-        <nav aria-label="Page navigation example">
-          <ul className="pagination justify-content-end">
-            <li className={prevClass}>
+        <div className="page">
+        <div aria-label="Page navigation example">
+          <div className="pagination justify-content-end">
+            <div className={prevClass} id="pagination1">
               <a
-                className="page-link"
-                href="#"
-                tabindex="-1"
+                // href="#"
+                // tabindex="-1"
                 aria-disabled="true"
                 onClick={() => handlePageChange(currentPage - 1)}
               >
-                Previous
+                 Previous     
               </a>
-            </li>
+            </div><br/><br/>
+            <div style={{ textAlign: "center",left:879,position:'absolute',color:"#ffc500"}}>
             {pages}
+            </div>
 
-            <li className={nextClass}>
-              <a
-                className="page-link"
-                onClick={() => handlePageChange(currentPage + 1)}
-              >
-                Next
-              </a>
-            </li>
-          </ul>
-        </nav>
+            <div className={nextClass} id="pagination2">
+              <a onClick={() => handlePageChange(currentPage + 1)}> Next </a>
+            </div>
+          </div>
+        </div>
+        </div>
 
         <div
           class="modal fade"
@@ -225,7 +230,8 @@ export default function NoteList() {
           aria-hidden="true"
         >
           {/* Popup modal */}
-          <Modal
+          <div className="model">
+          <Modal className="model"
             centered
             size="lg"
             isOpen={modal}
@@ -261,7 +267,7 @@ export default function NoteList() {
             </ModalBody>
             <ModalFooter>
               <button
-                className="btn btn-danger"
+                className="btn1"
                 data-bs-dismiss="modal"
                 onClick={() => handleDelete(noteid)}
               >
@@ -269,14 +275,14 @@ export default function NoteList() {
               </button>
 
               <button
-                type="button"
+                type="btn1"
                 class="btn btn-info"
                 onClick={() => setEnable(false)}
               >
                 Edit
               </button>
               <button
-                type="button"
+                type="btn1"
                 class="btn btn-success"
                 data-bs-dismiss="modal"
                 disabled={enable}
@@ -284,8 +290,19 @@ export default function NoteList() {
               >
                 Save
               </button>
+              <button
+                type="btn1"
+                class="btn btn-success"
+                onClick={toggle}
+              >
+                Close
+              </button>
+
             </ModalFooter>
           </Modal>
+          </div>
+
+      
         </div>
       </div>
     </div>

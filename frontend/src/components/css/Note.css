@@ -26,7 +26,7 @@
   height: 100%;
 }
 .user-form {
-  background: #ffc500;
+  background: rgba(212, 212, 212, 0.8);
   padding: 50px;
   width: 50%;
   height: 100%;
@@ -40,7 +40,6 @@
 }
 .user-form i {
   position: absolute;
-  color: #6c63ff;
   margin: 25px 10px;
 }
 input {
@@ -68,12 +67,6 @@ input {
   background: #fff;
   margin: 5px;
 }
-span:nth-child(2) {
-  background-color: #fffc00;
-}
-span:nth-child(3) {
-  background-color: #fffc00;
-}
 .action-btn {
   width: 100%;
   display: flex;
@@ -91,14 +84,20 @@ span:nth-child(3) {
   font-size: 16px;
 }
 .primary {
+  border: 2px solid black;
+  text-align: center;
+  font-weight: 550;
+color: black;
+  background:
+    #ffc500
+}
+
+.primary:hover {
   border: none;
   text-align: center;
-
-  background: linear-gradient(
-    45deg,
-    rgb(82, 73, 9) 24%,
-    rgba(255, 107, 0, 1) 100%
-  );
+color:#fff;
+  background:
+    black;
 }
 
 @media (max-width: 665px) {
@@ -122,3 +121,83 @@ span:nth-child(3) {
     padding: 5px;
   }
 }
+
+
+table {
+  border-collapse: collapse;
+  border-spacing: 1em .5em;
+  width: 70%;
+  border: 1px solid #ddd;
+  margin-left: 250px;
+  margin-top: 60px;
+  background-color:  rgba(255, 255, 255, 0.8);
+}
+
+th, td {
+  text-align: left;
+  padding: 35px 25px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+.viewbutton{
+  float: right;
+  margin-top: 8px;
+  margin-right: 30px;
+  background-color: #ffc500;
+  padding: 10px 25px;
+  border-radius: 15px;
+  border:2px solid #ffc500;
+  cursor: pointer;
+}
+
+.btn{
+  background-color: #ffc500;
+  padding: 10px 25px;
+  border-radius: 15px;
+  border:2px solid #ffc500;
+  cursor: pointer;
+}
+
+  #pagination1{
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    font-size: 15px;
+    background-color: #ffc500;
+    margin-left:45%;
+    margin-top: 30px;
+    /* margin-top: 0px; */
+    position: sticky;
+    cursor:default;
+  }
+
+  #pagination2{
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    font-size: 15px;
+    background-color: #ffc500;
+    position: sticky;
+    margin-left:55%;
+margin-top: -33px;
+cursor:default;
+  }
+
+  .model{
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: absolute;
+    background-size:cover;
+
+  }
+
+
+
+
+

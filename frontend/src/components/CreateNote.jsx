@@ -36,27 +36,26 @@ export default function CreateNote() {
     <div>
       <div className="inner mt-4">
         <div className="photo">
-          <img src="https://res.cloudinary.com/waste123/image/upload/v1656833398/RMTS/SE/ngvm9vq9whtyg9wbwjhc.png" />
+          <img src="https://images.unsplash.com/photo-1517842645767-c639042777db?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDh8fHxlbnwwfHx8fA%3D%3D&w=1000&q=80" />
         </div>
         <div className="user-form">
           <h2>My Notes</h2>
           <form onSubmit={handleSubmit}>
             <input
               type="text"
-              placeholder="Title"
+              placeholder="Enter the Title Here"
               name="title"
               onChange={handleChange}
             />
 
-            <textarea
+            <textarea style={{width:500,height:200,borderRadius:20}}
               type="text-area"
-              placeholder="Description"
               name="note"
               onChange={handleChange}
             />
 
             <div className="action-btn " style={{ marginLeft: "70px" }}>
-              <button className="btnCreate primary">Create Note</button>
+              <button className="btnCreate primary">Add Note</button>
             </div>
           </form>
         </div>
