@@ -188,14 +188,6 @@ export default function NoteList() {
                   >
                     <i className="fa fa-eye"></i>&nbsp;View
                   </button>
-
-                  {/* <a
-                    className="btn btn-danger me-5"
-                    style={{ marginLeft: "15%" }}
-                    href="/delete"
-                  >
-                    <i className="far fa-trash-alt"></i>&nbsp;Delete
-                  </a> */}
                 </td>
               </tr>
             ))}

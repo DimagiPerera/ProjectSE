@@ -163,14 +163,6 @@ export default function UserList() {
                                     >
                                         <i className="fa fa-eye"></i>&nbsp;View
                                     </button>
-
-                                    {/* <a
-                    className="btn btn-danger me-5"
-                    style={{ marginLeft: "15%" }}
-                    href="/delete"
-                  >
-                    <i className="far fa-trash-alt"></i>&nbsp;Delete
-                  </a> */}
                                 </td>
                             </tr>
                         ))}
@@ -254,29 +246,7 @@ export default function UserList() {
                                 </form>
                             </ModalBody><br /><br />
                             <ModalFooter>
-                                {/* <button
-             type="btn"
-             class="btn btn-info"
-                // onClick={() => handleDelete(noteid)}
-              >Delete
-              </button>
-
-              <button
-                type="btn"
-                class="btn btn-info"
-                onClick={() => setEnable(false)}
-              >
-                Edit
-              </button>
-              <button
-                type="btn"
-                class="btn btn-success"
-                data-bs-dismiss="modal"
-                disabled={enable}
-                // onClick={() => handleUpdate(noteid)}
-              >
-                Save
-              </button> */}
+                               
                                 <button style={{ borderRadius: "50%", font: 20, width: 30, height: 30, fontWeight: 550, position: "absolute", top: 10, right: 15 }}
                                     onClick={toggle}
                                 >

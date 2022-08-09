@@ -12,7 +12,6 @@ function Header() {
   useEffect(() => {
     setToken(localStorage.getItem("TOKEN"));
     localStorage.setItem("LocalUser", localUser);
-    //localStorage.setItem("LocalUser", JSON.stringify(LoggedUser));
   }, []);
 
   const handleLogout = async () => {

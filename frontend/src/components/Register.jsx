@@ -83,8 +83,6 @@ export default function Register() {
   useEffect(() => {
     setToken(localStorage.getItem("TOKEN"));
 
-    //console.log("82", JSON.parse(localStorage.getItem("LocalUser")));
-
     redirect();
   }, []);
   return (
