@@ -4,9 +4,9 @@ import bcrypt from "bcrypt";
 const temPasswordHash = await bcrypt.hash("12345678", 12);
 
 const Admins = {
-  firstName: "Sanjula",
-  lastName: "Dulshan",
-  email: "sdulshan10@gmail.com",
+  firstName: "Piumika",
+  lastName: "Saranga",
+  email: "piumika1999@gmail.com",
   accountType: "admin",
   password: temPasswordHash,
 };
