@@ -4,7 +4,7 @@ import "../components/css/login.css";
 import { customAlphabet } from "nanoid";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import { isLength, isMatch } from "./Validation/validation";
+import { isLength, isMatch } from "./validation/validation";
 const nanoid = customAlphabet("1234567890", 3);
 
 export default function Register() {
