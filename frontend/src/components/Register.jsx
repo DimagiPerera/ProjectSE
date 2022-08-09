@@ -1,10 +1,10 @@
 import { useSelector } from "react-redux";
 import React, { useState, useEffect } from "react";
-import "../components/CSS/login.css";
+import "../components/css/login.css";
 import { customAlphabet } from "nanoid";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import { isLength, isMatch } from "./validation/Validation";
+import { isLength, isMatch } from "./Validation/validation";
 const nanoid = customAlphabet("1234567890", 3);
 
 export default function Register() {
@@ -151,6 +151,7 @@ export default function Register() {
           <input
             type="tel"
             name="telephone"
+            placeholder="Mobile Number"
             onChange={handleChange}
           />
 

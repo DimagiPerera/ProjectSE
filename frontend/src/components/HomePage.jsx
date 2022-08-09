@@ -1,5 +1,5 @@
 import React from "react";
-import "../components/CSS/home.css";
+import "../components/css/home.css";
 import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import ClipLoader from "react-spinners/ClipLoader";

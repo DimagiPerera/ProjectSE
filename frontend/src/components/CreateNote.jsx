@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "../components/CSS/note.css";
+import "../components/css/note.css";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import swal from 'sweetalert';

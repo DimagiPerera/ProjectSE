@@ -4,7 +4,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { dispatchLogin } from "../redux/actions/authAction";
 import { useDispatch } from "react-redux";
-import "../components/CSS/login.css";
+import "../components/css/login.css";
 import swal from 'sweetalert';
 
 export default function Login() {

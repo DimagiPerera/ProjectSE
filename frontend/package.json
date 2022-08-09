@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^0.27.2",
@@ -28,7 +27,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --verbose",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -49,5 +48,8 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://localhost:8070"
+  "proxy": "http://localhost:8070",
+  "devDependencies": {
+    "@testing-library/jest-dom": "^5.16.5"
+  }
 }
