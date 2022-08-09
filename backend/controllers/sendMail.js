@@ -3,7 +3,7 @@ import hbs from "nodemailer-express-handlebars";
 import path from "path";
 
 const sendMail = (name, temPassword, email, url) => {
-  //initialize nodemailer
+  //Initializing nodemailer
   var transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {

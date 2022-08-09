@@ -3,13 +3,15 @@ import { nanoid } from "nanoid";
 import sendMail from "./sendMail.js";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
-//create user to the system
+
+
+//create user
 export const createUser = async (req, res) => {
   try {
     const { firstName, lastName, email, accountType } = req.body;
     console.log(req.body);
 
-    //Generate random password with 8 characters
+    //Generate temporary password
     const temPassword = nanoid(8);
 
     if (!firstName || !lastName || !email || !accountType) {
@@ -17,7 +19,8 @@ export const createUser = async (req, res) => {
         msg: "Please fill all the fields",
       });
     }
-    //Check if email is valid
+
+    //Check email validation
     if (!validateEmail(email)) {
       return res.status(400).json({
         msg: "Please enter valid email",
@@ -32,7 +35,7 @@ export const createUser = async (req, res) => {
       });
     }
 
-    //Hash password
+    //Encrypt password
     const temPasswordHash = await bcrypt.hash(temPassword, 12);
 
     //Create new user
@@ -47,7 +50,7 @@ export const createUser = async (req, res) => {
 
       const url = `${process.env.CLIENT_URL}/login`;
 
-      //Send temporary password and login url to user email
+      //Send email to the user
       sendMail(firstName, temPassword, email, url);
     });
   } catch (err) {
@@ -55,7 +58,7 @@ export const createUser = async (req, res) => {
   }
 };
 
-//Login user
+//Sign In
 export const login = async (req, res) => {
   try {
     const { email, password } = req.body;
@@ -73,7 +76,7 @@ export const login = async (req, res) => {
         msg: "User does not exist",
       });
     }
-    //Check if password is correct
+    //Check if password matched
     const isMatch = await bcrypt.compare(password, user.password);
     if (!isMatch) {
       return res.status(400).json({
@@ -81,7 +84,7 @@ export const login = async (req, res) => {
       });
     }
 
-    //refresh token
+    //Refresh token
     const refresh_token = createRefreshToken({ id: user._id });
 
     res.cookie("refreshtoken", refresh_token, {
@@ -104,12 +107,14 @@ export const resetPassword = async (req, res) => {
   try {
     const { email, password } = req.body;
 
-    //check password length
+    //Password Validation
     if (password.length < 8) {
       return res.status(400).json({
         msg: "Password must be at least 8 characters long",
       });
     }
+
+
     //Hash password
     const passwordHash = await bcrypt.hash(password, 12);
     //Update password
@@ -125,7 +130,8 @@ export const resetPassword = async (req, res) => {
   }
 };
 
-//Register user
+
+//Sign Up
 export const registerUser = async (req, res) => {
   try {
     const { id, firstName, lastName, email, dateOfBirth, mobile, status } =
@@ -155,7 +161,7 @@ export const registerUser = async (req, res) => {
   }
 };
 
-//Get all users
+//Fetch all users details
 export const getAllUsersInfo = async (req, res) => {
   try {
     console.log("getAllUsersInfo", req.user);
@@ -169,7 +175,7 @@ export const getAllUsersInfo = async (req, res) => {
   }
 };
 
-//Get user information
+//Fetch single user information
 export const getUserInfo = async (req, res) => {
   console.log("getUserInfo", req.user);
   try {
@@ -181,7 +187,7 @@ export const getUserInfo = async (req, res) => {
   }
 };
 
-//Logout user
+//Logout
 export const logout = async (req, res) => {
   try {
     res.clearCookie("refreshtoken", { path: "/user/refresh_token" });
@@ -191,7 +197,7 @@ export const logout = async (req, res) => {
   }
 };
 
-//Check if email is valid format
+//Email Valiation
 function validateEmail(email) {
   const regex =
     /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -206,7 +212,7 @@ const createRefreshToken = (payload) => {
   });
 };
 
-//get access token
+//Get access token
 export const getAccessToken = (req, res) => {
   try {
     const rf_token = req.cookies.refreshtoken;
