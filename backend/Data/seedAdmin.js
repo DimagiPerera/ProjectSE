@@ -1,7 +1,7 @@
 import Admin from "../models/user.js";
 import bcrypt from "bcrypt";
 
-const temPasswordHash = await bcrypt.hash("12345678", 12);
+const temPasswordHash = await bcrypt.hash("saranga@123", 12);
 
 const Admins = {
   firstName: "Piumika",
