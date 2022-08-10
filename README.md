@@ -42,6 +42,12 @@ prerequisites - NodeJS 16.x
 
 ```npm start```
 
+Instructions to run the Test Cases
+----------------------------------
+
+```cd frontend```
+
+```npm test```
 
 
 
