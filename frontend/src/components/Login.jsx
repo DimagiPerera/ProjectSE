@@ -36,7 +36,11 @@ export default function Login() {
 
       dispatch(dispatchLogin());
     } catch (error) {
-      alert(error.response.data.msg);
+      swal({
+        text: error.response.data.msg,
+        icon: "warning",
+      });
+      // alert(error.response.data.msg);
     }
   };
   return (

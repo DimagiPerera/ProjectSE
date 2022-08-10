@@ -224,11 +224,36 @@ border: none;
     justify-content: center;
     align-items: center;
     width: 50%;
-   position: absolute; 
-    top: 0;
     margin-left: 25%;
+    position: relative;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  right: 1%;
+  border-radius: 20px;
+
 
   }
+
+  /* Toggle this class - hide and show the model2 */
+.model1 .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+}
+
+/* Add animation (fade in the model2) */
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;} 
+  to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
+}
 
   
   /* model2 container - can be anything you want */
@@ -242,7 +267,7 @@ border: none;
   user-select: none;
   background-color: rgb(199, 199, 199);
   width:500px;
-  right: 23%;
+  left: 35%;
   border-radius: 20px;
   border:3px solid #3b3b3b;
 }

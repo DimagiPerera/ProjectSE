@@ -4,6 +4,7 @@ import "../components/css/login.css";
 import { customAlphabet } from "nanoid";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import swal from 'sweetalert';
 import { isLength, isMatch } from "./Validation/validation";
 const nanoid = customAlphabet("1234567890", 3);
 
@@ -56,24 +57,40 @@ export default function Register() {
     };
 
     if (isLength(user.password)) {
-      alert("Password must be at least 8 characters long");
+      // alert("Password must be at least 8 characters long");
+      swal({
+        text: "Password must be at least 8 characters long",
+        icon: "warning",
+      });
       return;
     }
 
     if (!isMatch(user.password, user.cPassword)) {
-      alert("Password and Confirm Password must match");
+      // alert("Password and Confirm Password Mismatched");
+      swal({
+        text: "Password and Confirm Password Mismatched",
+        icon: "warning",
+      });
       return;
     }
 
     try {
       await axios.post("user/register", user).then((res) => {
-        alert(res.data.msg);
+        // alert(res.data.msg);
+        swal({
+          text: res.data.msg,
+          icon: "success",
+        });
       });
 
       await axios
         .post("user/reset", user, { headers: { Authorization: token } })
         .then((res) => {
-          alert(res.data.msg);
+          // alert(res.data.msg);
+          swal({
+            text: res.data.msg,
+            icon: "success",
+          });
           handleLogout();
         });
     } catch (error) {
