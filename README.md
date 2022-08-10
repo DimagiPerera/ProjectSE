@@ -24,9 +24,9 @@ Instructions to run the App
 ---------------------------
 prerequisites - NodeJS 16.x
 
-```git clone https://github.com/DimagiPerera/InternshipAssignment.git```
+```git clone https://github.com/DimagiPerera/ProjectSE.git```
 
-```cd InternshipAssignment```
+```cd ProjectSE```
 
 ``` cd backend ```
 
